@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CountryList {
+  id             Int           @id @default(autoincrement())
+  countryName    String        @unique
+  cityList       CityList[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model CityList {
+  id             Int          @id @default(autoincrement())
+  countryName    String       
+  country        CountryList  @relation(fields: [countryName], references: [countryName])
+  cityName       String
+  description    String?
+  monthName      String
+  month          MonthList    @relation(fields: [monthName], references: [monthName])
+  durationName   String
+  duration       Duration     @relation(fields: [durationName], references: [durationName]) 
+  picture        String?
+  itinerary      Itinerary[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+}
+
+model Duration {
+  id            Int       @id @default(autoincrement()) 
+  durationName  String    @unique
+  cityList      CityList[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model MonthList {
+  id            Int       @id @default(autoincrement()) 
+  monthName     String    @unique
+  cityList      CityList[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Itinerary {
+  id              Int             @id @default(autoincrement())
+  cityId          Int             
+  cityList        CityList        @relation(fields: [cityId], references: [id])
+  typeName        String
+  type            TypeOfItinerary @relation(fields: [typeName], references: [typeName]) 
+  activity        String?
+  duration        String?
+  price           Int?
+  priceConverted  Int?
+  link            String?
+  gallery         String?
+  numberOfPersons Int?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model TypeOfItinerary {
+  id            Int         @id @default(autoincrement()) 
+  typeName      String      @unique
+  itinerary     Itinerary[]
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
