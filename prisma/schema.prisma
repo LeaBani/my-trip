@@ -9,3 +9,64 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model CountryList {
+  id             Int           @id @default(autoincrement())
+  name           String        @unique
+  cityList       CityList[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+}
+
+model CityList {
+  id             Int          @id @default(autoincrement())
+  countryName    String       
+  name           CountryList  @relation(fields: [countryName], references: [name])
+  cityName       String
+  description    String?
+  monthName      String
+  month          MonthList    @relation(fields: [monthName], references: [monthName])
+  // duration       Duration?  
+  picture        String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+// model Duration {
+//   id            Int     @id @default(autoincrement()) 
+//   name          CityTripList? @relation(fields: [durationId], references: [id])
+//   durationId    Int     @unique
+//   createdAt     DateTime  @default(now())
+//   updatedAt     DateTime  @updatedAt
+// }
+
+model MonthList {
+  id            Int       @id @default(autoincrement()) 
+  monthName     String    @unique
+  cityList      CityList[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Itinerary {
+  id              Int     @id @default(autoincrement())
+  name            String?  
+  type            TypeOfItinerary?
+  place           String?
+  duration        String?
+  price           Int?
+  priceConverted  Int?
+  link            String?
+  gallery         String?
+  numberOfPersons Int?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model TypeOfItinerary {
+  id            Int     @id @default(autoincrement()) 
+  name          Itinerary? @relation(fields: [typeId], references: [id])
+  typeId        Int     @unique
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
