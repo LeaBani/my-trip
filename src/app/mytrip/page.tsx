@@ -1,5 +1,6 @@
-import { CityItem } from "@/components/Cities/Cities";
-import { prisma } from "@/lib";
+import React from "react";
+import { CityItem } from "../../components/Cities/Cities";
+import { prisma } from "../../lib";
 
 /**
  * This function gets all avaiable Cities of our database
