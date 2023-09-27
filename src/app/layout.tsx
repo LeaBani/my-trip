@@ -1,5 +1,6 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import React from 'react';
+import './globals.css';
+import { Inter } from 'next/font/google';
 import { NavBar } from '../components/NavBar/NavBar';
 
 
@@ -10,7 +11,11 @@ export const metadata = {
   description: 'Blog de voyage par une passionnée',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="fr">
       <body className={inter.className}>
