@@ -2,39 +2,15 @@ import React from "react";
 import { prisma } from "../../lib";
 import { CityItem } from "../../components/Cities/Cities";
 import { CityItemProps } from "../../components/Cities/Cities";
-import { revalidatePath } from 'next/cache';
+import { useEffect } from "react";
+import changeInputValue from "../_actions";
+import GetAllCities from "../../components/Cities/AllCities";
 
 
-// function getAllCountries() { 
-//   return prisma.countryList.findMany();
-// }
-
-
-async function getCitiesByCountry(countryNameSelected: string) {
-  const allCitiesByCountry = await prisma.cityList.findMany({
-    where: {
-      countryName: countryNameSelected,
-    }
-  });
   
-  return MyTripList(allCitiesByCountry);
-}
-
-async function MyTripList(allCitiesByCountry : Array<CityItemProps> = []) {
-  
-  // const allCountries = await getAllCountries();
-  
-  async function changeInputValue(data: FormData){
-    'use server'
-    // get input value
-    let inputval = data.get("inputValue")?.valueOf() as string;
-    console.log('input val', inputval);
+function MyTripList(allCitiesByCountry : Array<CityItemProps> = [], cities) {
     
-    if (!inputval || typeof inputval !== 'string') return
-    await getCitiesByCountry(inputval);
-    
-  }
-  console.log(allCitiesByCountry)
+  console.log('all cities by country', allCitiesByCountry)
   console.log(Array.isArray(allCitiesByCountry))
   
     return (
@@ -53,6 +29,7 @@ async function MyTripList(allCitiesByCountry : Array<CityItemProps> = []) {
                 name="inputValue"
                 type="text"
                 className="block w-full rounded-md border-0 py-1.5 text-purple shadow-sm ring-1 ring-inset ring-purple focus:ring-2 focus:ring-inset focus:ring-midnight sm:max-w-xs sm:text-sm sm:leading-6"/>
+                <button type="submit" className="text-purple">Rechercher</button>
 
                 </form>
 
@@ -70,13 +47,11 @@ async function MyTripList(allCitiesByCountry : Array<CityItemProps> = []) {
 
         {/* <ul className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-purple pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"> */}
         <ul className="text-purple">
-            {allCitiesByCountry
-            ? <li>Pas de résultat</li>
-            : 
-              allCitiesByCountry.map(elem => (
-                <li key={elem.id}>test</li>
-              ))
-              }
+
+          <GetAllCities/>
+
+
+
         </ul>
 
         </div>
