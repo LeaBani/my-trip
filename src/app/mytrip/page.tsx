@@ -1,17 +1,12 @@
 import React from "react";
-import { prisma } from "../../lib";
-import { CityItem } from "../../components/Cities/Cities";
 import { CityItemProps } from "../../components/Cities/Cities";
-import { useEffect } from "react";
-import changeInputValue from "../_actions";
+import changeInputValue from "../../app/_actions";
 import GetAllCities from "../../components/Cities/AllCities";
+import GetCitiesByCountry from "../../components/Cities/ChangeInput";
 
 
-  
-function MyTripList(allCitiesByCountry : Array<CityItemProps> = [], cities) {
+function MyTripList(allCitiesByCountry : Array<CityItemProps> = []) {
     
-  console.log('all cities by country', allCitiesByCountry)
-  console.log(Array.isArray(allCitiesByCountry))
   
     return (
       <main>
@@ -48,8 +43,9 @@ function MyTripList(allCitiesByCountry : Array<CityItemProps> = [], cities) {
         {/* <ul className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-purple pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"> */}
         <ul className="text-purple">
 
-          <GetAllCities/>
+          {<GetAllCities/> ||
 
+          <GetCitiesByCountry/>}
 
 
         </ul>
