@@ -3,7 +3,7 @@ import { getAllCitiesAction } from "../../app/_actions";
 
 export default async function GetAllCities() {
     const cities = await getAllCitiesAction();
-    // console.log('Villes récupérées :', cities);
+    console.log('composant all ciities');
     return (
         <ul>
         {cities
