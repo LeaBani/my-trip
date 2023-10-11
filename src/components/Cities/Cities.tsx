@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import logo from '../../yosemite.jpg'
 
 export interface CityItemProps {
   id: number
@@ -14,7 +16,7 @@ export interface CityItemProps {
 export async function CityItem({id, countryName, cityName, description, monthName, durationName, picture} : CityItemProps){
   
     return (
-      <article className="flex max-w-xl flex-col items-start justify-between">
+      <article className="flex max-w-xl flex-col items-start justify-between px-20">
               <div className="flex items-center gap-x-4 text-xs">
                 <a
                   href={countryName}
@@ -33,7 +35,7 @@ export async function CityItem({id, countryName, cityName, description, monthNam
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-purple">{description}</p>
               </div>
               <div className="relative mt-8 flex items-center gap-x-4">
-              {/* <img alt="" className="h-10 w-10 rounded-full bg-white" /> */}
+              <Image src={logo} width='20' height={20} alt="avatar" className="h-10 w-10 rounded-full bg-white" />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-midnight">
                     <a href={monthName}>
