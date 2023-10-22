@@ -11,9 +11,9 @@ async function OneTrip({
   
   
   const paramsId = Number(params.tripId)
-  console.log('page id', paramsId)
+  // console.log('page id', paramsId)
   const oneTrip = await getOneTripAction(paramsId);
-  console.log('one trip', oneTrip)
+  // console.log('one trip', oneTrip)
     return (
       <main>
             
