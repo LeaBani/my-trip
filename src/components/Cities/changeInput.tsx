@@ -11,6 +11,7 @@ async function changeInputValue(data: FormData | null | undefined){
   // getCitiesByCountryAction(inputval);
   if (inputVal) {
     GetCitiesByCountry(inputVal);
+    console.log('input val')
   }
 }
 
