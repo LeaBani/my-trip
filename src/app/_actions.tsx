@@ -19,12 +19,22 @@ export async function getCitiesByCountryAction(countryNameSelected: string | nul
       countryName: countryNameSelected,
     }
   });
-    console.log('all cities selected', allCitiesByCountry)
+    // console.log('all cities selected', allCitiesByCountry)
     return allCitiesByCountry;
 }
+
 
 
 export async function getAllCitiesAction() {
     const allCities = await prisma.cityList.findMany();
     return allCities;
+}
+
+export async function getOneTripAction(id: number) {
+  const oneTrip = await prisma.itinerary.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  return oneTrip;
 }

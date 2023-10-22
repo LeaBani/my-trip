@@ -19,7 +19,7 @@ export async function CityItem({id, countryName, cityName, description, monthNam
       <article className="flex max-w-xl flex-col items-start justify-between px-20">
               <div className="flex items-center gap-x-4 text-xs">
                 <a
-                  href={countryName}
+                  href={`mytrip/${id}`}
                   className="relative z-10 rounded-full bg-purple px-3 py-1.5 font-medium text-white hover:bg-midnight"
                 >
                   {countryName}
@@ -27,7 +27,7 @@ export async function CityItem({id, countryName, cityName, description, monthNam
               </div>
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-midnight group-hover:text-purple">
-                  <a href={cityName}>
+                  <a href={`mytrip/${id}`}>
                     <span className="absolute inset-0" />
                     {cityName}
                   </a>

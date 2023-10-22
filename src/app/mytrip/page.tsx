@@ -16,11 +16,11 @@ function MyTripList() {
           </p>
         </div>
 
-        <ul className="border-t border-purple pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
+        <div className="border-t border-purple pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
 
         <GetCitiesByCountry />
           
-=       </ul>
+=       </div>
         </div>
         </div>
       </main>
