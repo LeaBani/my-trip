@@ -1,5 +1,5 @@
-import { getCitiesByCountryAction } from "../../app/_actions";
-import { CityItem } from "./Cities";
+import { getCitiesByCountryAction } from "../_actions";
+import { CityItem } from "../../components/Cities";
 
 export default async function GetCitiesByCountryResults({value}) {
     // console.log('input val in results', value)

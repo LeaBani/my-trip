@@ -23,6 +23,16 @@ export async function getCitiesByCountryAction(countryNameSelected: string | nul
     return allCitiesByCountry;
 }
 
+export async function getCityById(id: number) {
+  const allCitiesByCountry = await prisma.cityList.findMany({
+    where: {
+      id: id,
+    }
+  });
+    // console.log('all cities selected', allCitiesByCountry)
+    return allCitiesByCountry;
+}
+
 
 
 export async function getAllCitiesAction() {
