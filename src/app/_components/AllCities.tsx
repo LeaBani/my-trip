@@ -1,5 +1,5 @@
-import { CityItem } from "./Cities";
-import { getAllCitiesAction } from "../../app/_actions";
+import { CityItem } from "../../components/Cities";
+import { getAllCitiesAction } from "../_actions";
 
 export default async function GetAllCities() {
     const cities = await getAllCitiesAction();

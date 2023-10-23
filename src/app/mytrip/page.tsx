@@ -1,5 +1,5 @@
 import React from "react";
-import GetCitiesByCountry from "../../components/Cities/ChangeInput";
+import GetCitiesByCountry from "../_components/ChangeInput";
 
 function MyTripList() {
   
