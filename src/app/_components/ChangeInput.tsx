@@ -37,7 +37,7 @@ export default async function GetCitiesByCountry(value : any) {
                 name="inputValue"
                 type="text"
                 className="block w-full rounded-md border-0 py-1.5 text-purple shadow-sm ring-1 ring-inset ring-purple focus:ring-2 focus:ring-inset focus:ring-midnight sm:max-w-xs sm:text-sm sm:leading-6"/>
-                <button type="submit" className="flex-none rounded-md bg-purple px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-midnight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple">Rechercher</button>
+                <button type="submit" className="text-secondary text-[10px] font-medium w-[67px] h-7 bg-light rounded-[40px] border border-secondary">Rechercher</button>
 
                 </form>
 

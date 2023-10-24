@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.className}>
         <NavBar/>
-        <div>{children}</div> 
+        <div className='bg-light h-screen flex m-4'>{children}</div> 
       </body>
     </html>
   )
