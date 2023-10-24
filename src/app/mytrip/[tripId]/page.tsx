@@ -15,7 +15,7 @@ async function OneTrip({
   const paramsId = Number(params.tripId)
   // console.log('page id', paramsId)
   const oneTrip = await getOneTripAction(paramsId);
-  // console.log('one trip', oneTrip)
+  console.log('one trip', oneTrip)
 
   const cityInfos = await getCityById(paramsId);
   // console.log('cityInfos', cityInfos)
@@ -41,14 +41,18 @@ async function OneTrip({
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="border p-2">{oneTrip.typeName}</td>
-          <td className="border p-2">{oneTrip.duration}</td>
-          <td className="border p-2">{oneTrip.activity}</td>
-          <td className="border p-2">{oneTrip.price}</td>
-          <td className="border p-2">{oneTrip.link}</td>
-          <td className="border p-2">{oneTrip.numberOfPersons}</td>
+      {oneTrip.map(elem => (
+        <tr key={elem.id}>
+          <td className="border p-2">{elem.typeName}</td>
+          <td className="border p-2">{elem.duration}</td>
+          <td className="border p-2">{elem.activity}</td>
+          <td className="border p-2">{elem.price}</td>
+          <td className="border p-2">{elem.link}</td>
+          <td className="border p-2">{elem.numberOfPersons}</td>
         </tr>
+
+      ))        
+        }
       </tbody>
     </table>
 </div>

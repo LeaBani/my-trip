@@ -41,9 +41,9 @@ export async function getAllCitiesAction() {
 }
 
 export async function getOneTripAction(id: number) {
-  const oneTrip = await prisma.itinerary.findUnique({
+  const oneTrip = await prisma.itinerary.findMany({
     where: {
-      id: id,
+      cityId: id,
     },
   });
   return oneTrip;
