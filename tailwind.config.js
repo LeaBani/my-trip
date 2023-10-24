@@ -16,8 +16,10 @@ module.exports = {
     
     colors: {
       'white': '#ffffff',
-      'purple': '#3f3cbb',
-      'midnight': '#121063',
+      'primary': '#429385',
+      'secondary': '#183933',
+      'light': '#A2D0C8',
+      
     },
   },
   plugins: [],
