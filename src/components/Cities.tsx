@@ -29,7 +29,6 @@ export async function CityItem({id, countryName, cityName, description, monthNam
               <div className="">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary group-hover:text-secondary">
                   <Link href={`mytrip/${id}`}>
-                    <span className="absolute inset-0" />
                     {cityName}
                   </Link>
                 </h3>
@@ -39,7 +38,6 @@ export async function CityItem({id, countryName, cityName, description, monthNam
               <Image src={logo} width={20} height={20} alt="avatar" className="h-10 w-10 rounded-full bg-light" />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-secondary">
-                      <span className="absolute inset-0" />
                       {monthName}
                   </p>
                   <p className="text-secondary">{durationName}</p>

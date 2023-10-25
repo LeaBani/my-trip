@@ -37,6 +37,7 @@ export async function getCityById(id: number) {
 
 export async function getAllCitiesAction() {
     const allCities = await prisma.cityList.findMany();
+    // console.log(allCities)
     return allCities;
 }
 
