@@ -1,6 +1,3 @@
-import { revalidatePath } from "next/cache";
-import GetCitiesByCountryResults from "./Results";
-
 let inputVal : string;
 
 async function changeInputValue(data: FormData | null | undefined){
@@ -10,12 +7,12 @@ async function changeInputValue(data: FormData | null | undefined){
   console.log('inputval', inputVal)
   // getCitiesByCountryAction(inputval);
   if (inputVal) {
-    GetCitiesByCountry(inputVal);
+    ResearchBar(inputVal);
     console.log('input val')
   }
 }
 
-export default async function GetCitiesByCountry(value : any) {
+export default async function ResearchBar(value : any) {
   console.log('Valeur en dehors de la fonction :', value);
 
     return (
@@ -43,8 +40,6 @@ export default async function GetCitiesByCountry(value : any) {
 
               </div>
             </div>
-
-            <GetCitiesByCountryResults value={value} />
 
         </div>
 

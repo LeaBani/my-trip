@@ -17,16 +17,16 @@ export interface CityItemProps {
 export async function CityItem({id, countryName, cityName, description, monthName, durationName, picture} : CityItemProps){
   
     return (
-      <li className="flex max-w-xl flex-col items-start justify-between px-20">
+      <li className="flex max-w-xl flex-col items-start justify-between px-20 mb-8 bg-light bg-opacity-25 p-4 rounded-3xl">
               <div className="flex items-center gap-x-4 text-xs">
                 <Link
                   href={`mytrip/${id}`}
-                  className="relative z-10 rounded-full bg-secondary px-3 py-1.5 font-medium text-light hover:bg-primary"
+                  className="rounded-full bg-secondary px-3 py-1.5 font-medium text-light hover:bg-primary"
                 >
                   {countryName}
                 </Link>
               </div>
-              <div className="group relative">
+              <div className="">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary group-hover:text-secondary">
                   <a href={`mytrip/${id}`}>
                     <span className="absolute inset-0" />
@@ -35,8 +35,8 @@ export async function CityItem({id, countryName, cityName, description, monthNam
                 </h3>
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-secondary">{description}</p>
               </div>
-              <div className="relative mt-8 flex items-center gap-x-4">
-              <Image src={logo} width='20' height={20} alt="avatar" className="h-10 w-10 rounded-full bg-light" />
+              <div className="mt-8 flex items-center gap-x-4">
+              <Image src={logo} width={20} height={20} alt="avatar" className="h-10 w-10 rounded-full bg-light" />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-secondary">
                     <a href={monthName}>

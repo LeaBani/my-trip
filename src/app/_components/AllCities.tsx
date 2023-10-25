@@ -1,17 +1,18 @@
 import { CityItem } from "../../components/Cities";
 import { getAllCitiesAction } from "../_actions";
 
-export default async function GetAllCities() {
+export default async function AllCities() {
     const cities = await getAllCitiesAction();
-    console.log('composant all ciities');
+    // console.log('composant all ciities');
+
     return (
-        <ul>
+        <ul className="flex justify-center flex-wrap gap-2 max-w-xs min-w-full">
         {cities
             ? cities.map(elem => (
-                <li key={elem.id}><CityItem {...elem}/></li>
+                <CityItem key={elem.id} {...elem}/>
             ))
             : 
-                <li>Aucune donnée</li>
+                <p>Aucune donnée</p>
               }
         </ul>
     );

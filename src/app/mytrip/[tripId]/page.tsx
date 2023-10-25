@@ -1,6 +1,6 @@
 import React from "react";
 import { getCityById, getOneTripAction } from "../../_actions";
-import GetCitiesByCountry from "../../_components/ChangeInput";
+import GetCitiesByCountry from "../../_components/ResearchBar";
 import { CityItem } from "../../../components/Cities";
 
 async function OneTrip({
