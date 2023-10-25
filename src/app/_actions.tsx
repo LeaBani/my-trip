@@ -54,5 +54,6 @@ export async function getOneTripAction(id: number) {
       },
     ],
   });
+  
   return oneTrip;
 }
