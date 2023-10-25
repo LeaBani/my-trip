@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import logo from '../yosemite.jpg'
+import Link from "next/link";
 
 export interface CityItemProps {
   id: number
@@ -16,14 +17,14 @@ export interface CityItemProps {
 export async function CityItem({id, countryName, cityName, description, monthName, durationName, picture} : CityItemProps){
   
     return (
-      <article className="flex max-w-xl flex-col items-start justify-between px-20">
+      <li className="flex max-w-xl flex-col items-start justify-between px-20">
               <div className="flex items-center gap-x-4 text-xs">
-                <a
+                <Link
                   href={`mytrip/${id}`}
                   className="relative z-10 rounded-full bg-secondary px-3 py-1.5 font-medium text-light hover:bg-primary"
                 >
                   {countryName}
-                </a>
+                </Link>
               </div>
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary group-hover:text-secondary">
@@ -46,7 +47,7 @@ export async function CityItem({id, countryName, cityName, description, monthNam
                   <p className="text-secondary">{durationName}</p>
                 </div>
               </div>
-            </article>
+            </li>
     
   
     )

@@ -20,7 +20,7 @@ export default async function GetCitiesByCountry(value : any) {
 
     return (
 
-        <div>
+        <div className="border-t border-light pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
             <div className="sm:col-span-3 mx-auto max-w-7xl px-6 lg:px-8">
               <label htmlFor="country" className="block text-sm font-medium leading-6 text-purple">
                 Country

@@ -4,9 +4,8 @@ import GetCitiesByCountry from "../_components/ChangeInput";
 function MyTripList() {
   
     return (
-      <main>
             
-      <div className="w-[800px] bg-primary border border-light border-opacity-30 p-6">
+      <main className="w-[800px] bg-primary border border-light border-opacity-30 p-6">
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
@@ -16,13 +15,10 @@ function MyTripList() {
           </p>
         </div>
 
-        <div className="border-t border-light pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none">
 
         <GetCitiesByCountry />
           
-=       </div>
-        </div>
-        </div>
+       </div>
       </main>
     )
   }

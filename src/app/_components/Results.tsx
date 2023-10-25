@@ -11,10 +11,10 @@ export default async function GetCitiesByCountryResults({value}) {
 
     return (
 
-        <ul className="flex"> 
+        <ul className="flex justify-center"> 
         {cities
             ? cities.map(elem => (
-                <li key={elem.id}><CityItem {...elem}/></li>
+                <CityItem key={elem.id} {...elem}/>
             ))
             : 
                 <li>Aucune donnée</li>

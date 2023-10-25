@@ -45,6 +45,15 @@ export async function getOneTripAction(id: number) {
     where: {
       cityId: id,
     },
+    orderBy: [
+      {
+        typeName: 'asc', // Tri par typeName en ordre alphabétique ascendant
+      },
+      {
+        activity: 'asc', // Ensuite, tri par activity en ordre alphabétique ascendant
+      },
+    ],
   });
+  
   return oneTrip;
 }
