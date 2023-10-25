@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="bg-light">
+      <body className={inter.className}>
         <NavBar/>
         <div className='bg-light flex justify-center'>{children}</div> 
       </body>
